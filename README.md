@@ -16,9 +16,9 @@ Add the following line to your `project/plugins.sbt`:
 
 And add settings to your `build.sbt`:
 
-libraryDependencies += "net.sandrogrzicic" %% "scalabuff-compiler" % "1.3.8"
+    libraryDependencies += "net.sandrogrzicic" %% "scalabuff-compiler" % "1.3.8"
 
-libraryDependencies += "net.sandrogrzicic" %% "scalabuff-runtime" % "1.3.8"
+    libraryDependencies += "net.sandrogrzicic" %% "scalabuff-runtime" % "1.3.8"
 
 ### Step 2: Put your protobuf files at `src/protobuf/yourPackage/YourProto.proto`
 
