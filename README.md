@@ -33,5 +33,5 @@ message Test1 {
 
 ### Step 3: Just compile it!
 
-run `compile` command in sbt.
+Run `compile` command in sbt.
 
