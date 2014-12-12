@@ -41,7 +41,7 @@ final object SbtProtobuf {
             IO.createDirectory(outputDir)
             val processBuilder =
               Seq[String]((protobufCommand in protobufConfiguration).value,
-                "-cp", (managedClasspath in protobufConfiguration).value.map(_.data).mkString(File.pathSeparator)) ++
+                "-cp", (dependencyClasspath in injectConfiguration).value.map(_.data).mkString(File.pathSeparator)) ++
                 (protobufOptions in protobufConfiguration).value ++ in.toSeq.map(_.toString)
             logger.info(processBuilder.mkString("\"", "\" \"", "\""))
             processBuilder !< logger match {
