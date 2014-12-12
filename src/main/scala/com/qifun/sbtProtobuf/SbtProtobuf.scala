@@ -36,7 +36,7 @@ final object SbtProtobuf {
           protobufStreams.cacheDirectory / ("protobuf_" + scalaVersion.value),
           inStyle = FilesInfo.lastModified,
           outStyle = FilesInfo.exists) { (in: Set[File]) =>
-            val outputDir = (sourceManaged in protobufConfiguration).value
+            val outputDir = (sourceManaged in injectConfiguration).value
             IO.delete(outputDir)
             IO.createDirectory(outputDir)
             val processBuilder =
@@ -85,6 +85,6 @@ final object SbtProtobuf {
     Seq(sourceGenerators in injectConfiguration <+= protobuf in injectConfiguration,
       protobufOptions in protobufConfiguration := Seq(
         "net.sandrogrzicic.scalabuff.compiler.ScalaBuff",
-        "--scala_out=" + (sourceManaged in protobufConfiguration).value))
+        "--scala_out=" + (sourceManaged in injectConfiguration).value))
   }
 }
